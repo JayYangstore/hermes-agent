@@ -339,3 +339,8 @@ infografico/
 /pm/.lock.json.lock
 
 apps/desktop/.dist-build*
+
+# Local runtime plugin seed written by the desktop/plugin installer (not upstream source).
+# It is regenerated on demand; keeping it out of git avoids a spurious untracked entry
+# on every `git status` and keeps it from being pushed to the fork.
+/clawchat/
