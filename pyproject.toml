@@ -49,6 +49,12 @@ dependencies = [
   "python-dotenv==1.2.4; python_version >= '3.14'",
   "fire==0.7.1; python_version >= '3.14'",
   "httpx[socks]==0.28.1; python_version >= '3.14'",
+  # websockets>=14 auto-detects the macOS system SOCKS proxy (via urllib
+  # getproxies) and needs python-socks to speak the SOCKS protocol; httpx[socks]
+  # only provides socksio for HTTP CONNECT proxies. Without this, a gateway
+  # behind a system SOCKS proxy fails every websocket connect with
+  # "python-socks is required to use a SOCKS proxy".
+  "python-socks==2.8.2; python_version >= '3.14'",
   "rich==14.3.4; python_version >= '3.14'",
   "tomli-w==1.2.0; python_version >= '3.14'",  # Preserve relative dependency paths in staged plugin metadata.
   # 0.18.17 requires ruamel.yaml.clib on 3.14, which has no Windows ARM64 wheel.
